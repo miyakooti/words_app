@@ -1,0 +1,6 @@
+<%= form_for @question, method: :post do |f| %>
+  <h1>クイズの内容の入力</h1>
+  <p>問題文：<%= f.text_area :quiz %></p>
+  <p>回答：<%= f.text_area :answer %></p>
+  <input type="submit" value="SENT">
+<% end %>

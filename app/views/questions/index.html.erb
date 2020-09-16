@@ -1,0 +1,11 @@
+<h1>一問一答一覧</h1>
+<% if user_signed_in? %>
+  <% @questions.each do |question| %>
+    <p><%= question.quiz %>：<%= question.answer %>：<%= question.user.nickname.present? ? "購入者　#{question.user.nickname}" : "会員No.#{question.user.id}" %></p>
+    <!--userはもともと呼び出せないため、
+    アソシエーションというものを設定する必要がある。
+    モデル同士の相互関係のようなもの。-->
+  <% end %>
+<% else %>
+  <p>ログインしてください</p>
+<% end %>

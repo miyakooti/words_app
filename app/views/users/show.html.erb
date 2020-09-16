@@ -1,0 +1,5 @@
+<h1>これはマイページです</h1>
+<% @user.questions.each do |question| %>
+<!--アソシエーション設定してるから、question使える。-->
+  <p><%= question.quiz %>：<%= question.answer %></p>
+<% end %>
