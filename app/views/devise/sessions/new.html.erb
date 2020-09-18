@@ -1,5 +1,11 @@
 <%= stylesheet_link_tag 'test' %>
-<h2>ログイン</h2>
+<%= stylesheet_link_tag 'admin' %>
+<div id="container">
+  <div class="flex_box">
+    <div class="box_left">
+      
+    
+<h1 class="main_title">ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -19,9 +25,24 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="buttons">
+    <%= f.submit "ログイン" %>
   </div>
-<% end %>
-
 <%= render "devise/shared/links" %>
+<% end %>
+  
+  
+  
+  
+    </div>
+    <div class="box_right">
+      <p>
+        <img src= <%= image_path("mobile-login-amico.png")%> ></img>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
