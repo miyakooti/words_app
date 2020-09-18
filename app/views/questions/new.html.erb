@@ -1,9 +1,2 @@
-<%= stylesheet_link_tag 'test' %>
-<div id="container">
-<%= form_for @question, method: :post do |f| %>
-  <h1 class="main_title">新規作成</h1>
-  <p>問題文：<%= f.text_area :quiz %></p>
-  <p>回答：<%= f.text_area :answer %></p>
-  <input type="submit" value="作成する">
-<% end %>
-</div>
+<% @main_img_path = image_path("thought-amico.png") %>
+<%= render 'templates/form'%>

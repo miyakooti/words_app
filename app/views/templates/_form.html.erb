@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'test' %>
+<%= stylesheet_link_tag 'edit_new' %>
+
+<div id="container">
+<%= form_for @question, method: :post do |f| %>
+  <h1 class="main_title"><%= @main_title %></h1>
+  <div class="flex_box">
+  <div class="box_left">
+    <p class="quiz"><%= f.label "問題" %></p>
+    <p class="quiz"><%= f.text_area :quiz %></p>
+    <p class="answer"><%= f.label "回答" %></p>
+    <p class="answer"><%= f.text_area :answer %></p>
+    <input type="submit" value=<%= @button_value %>>
+  </div>
+    <div class="box_right">
+        <img src=<%= @main_img_path %> ></img>
+    </div>
+  </div>
+<% end %>
+</div>

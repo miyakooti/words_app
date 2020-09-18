@@ -15,11 +15,16 @@ class QuestionsController < ApplicationController
   
   def new
     @question = Question.new
+    @main_title = "新規作成"
+    @button_value = "投稿する"
+    # @main_img_path = image_path("thought-amico.png") image_pathはview側でしか使えないらしい、、残念
   end
   
   def edit
     @question = Question.find(params[:id])
-    @button_value = "保存する"
+    @main_title = "編集"
+    @button_value = "更新する"
+    # @main_img_path = image_path("edit-amico.png")
 
   end
   

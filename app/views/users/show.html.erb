@@ -2,14 +2,12 @@
 <%= stylesheet_link_tag 'show' %>
 
 <div id="container">
-    <%if flash[:notice]  %>
-    <p class="notice"><%= flash[:notice] %></p>
-  <% end %>
+  <%= render 'templates/notice'%>
 <h1 class="main_title"><span><%= @user.nickname.present? ? @user.nickname : "ゲスト#{@user.id}" %></span>さんのマイページです</h1>
     
 <% @questions.each do |question| %>
 <!--検索窓のフォームでID渡せなかったので、ここで無理やり分岐。-->
-<!--隠れフォームで実装できれば、この記述は必要ない。-->
+<!--隠れフォームで実装できれば、deviceのテンプレを利用することができるので、この記述は必要ない。-->
 <% if question.user_id == current_user.id %>
 <!--アソシエーション設定してるから、question使える。-->
   <div class="button">
