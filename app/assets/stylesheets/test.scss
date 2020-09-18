@@ -4,9 +4,14 @@
 }
 
 body {
+  background: #1c92d2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffffff, #93d5f9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffffff, #93d5f9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 header {
-  background-color:#a6a6a6;
+  background-color:#575757;
+  opacity:0.9;
   height:50px;
   display:flex;
   justify-content:space-between;
@@ -37,12 +42,13 @@ header a{
   
 }
 header a:hover{
-  background-color:#555;
+  background-color:#444;
+  transition: .3s;
 }
 
 #container{
   width:90%;
-  padding:50px 0;
+  padding:80px 0;
   margin:0 auto;
   text-align:left;
   max-width:800px;
@@ -87,10 +93,10 @@ header a:hover{
   text-align:center;
 }
 .button_box_right{
-  border-right: 1px solid #555;
+  border-right: 1px solid black;
 }
 .button_box_left{
-  border-left: 1px solid #555;
+  border-left: 1px solid black;
 }
 .search_box{
   padding: 12px 12px 0 12px;

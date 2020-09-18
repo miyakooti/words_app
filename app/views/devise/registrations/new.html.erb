@@ -1,6 +1,9 @@
 <%= stylesheet_link_tag 'test' %>
 <%= stylesheet_link_tag 'admin' %>
-<h2>Sign up</h2>
+<div id="container">
+  <div class="flex_box">
+    <div class="box_left">
+<h2 class="main_title">新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -20,7 +23,7 @@
   <div class="field">
     <%= f.label "パスワード" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(最小<%= @minimum_password_length %>文字)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -30,9 +33,19 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="buttons">
     <%= f.submit "新規登録" %>
   </div>
+<%= render "devise/shared/links" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+    </div>
+    <div class="box_right">
+      <p>
+        <img src= <%= image_path("add-user-amico.png")%> ></img>
+      </p>
+    </div>
+  </div>
+</div>
+
+

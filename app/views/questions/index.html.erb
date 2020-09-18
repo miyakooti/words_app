@@ -8,16 +8,17 @@
   <%if flash[:notice]  %>
     <p class="notice"><%= flash[:notice] %></p>
   <% end %>
-<h1 class="main_title">一覧</h1>
+<h1 class="main_title">みんなの問題一覧</h1>
   <% @questions.each do |question| %>
   <div class="button">
-    <%= link_to "編集",  edit_question_path(question) %>
-    <%= link_to "削除",  question_path(question), method: :delete, data:{confirm:"本当に削除しますか？"} %>
+    <!--この機能はマイページだけでいい気がする-->
+    <!--<%= link_to "編集",  edit_question_path(question) %>-->
+    <!--<%= link_to "削除",  question_path(question), method: :delete, data:{confirm:"本当に削除しますか？"} %>-->
   </div>
   <table class="question">
     <tr><th>問:<%= question.quiz %></th></tr>
     <tr><th class="border_dotted look">答:<span class="hide"><%= question.answer %><span></th></tr>
-    <tr><th class="border_dotted"><%= question.user.nickname.present? ? "作成者：#{question.user.nickname}" : "作成者NO.#{question.user.id}" %><span></th></tr>
+    <tr><th class="border_dotted"><%= question.user.nickname.present? ? "作成者：#{question.user.nickname}" : "ゲストNO.#{question.user.id}" %><span></th></tr>
   </table>
     <!--userはもともと呼び出せないため、
     アソシエーションというものを設定する必要がある。

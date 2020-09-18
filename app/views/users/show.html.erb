@@ -1,7 +1,11 @@
 <%= stylesheet_link_tag 'test' %>
+<%= stylesheet_link_tag 'show' %>
 
 <div id="container">
-<h1 class="main_title">これはマイページです</h1>
+    <%if flash[:notice]  %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+<h1 class="main_title"><span><%= @user.nickname.present? ? @user.nickname : "ゲスト#{@user.id}" %></span>さんのマイページです</h1>
     
 <% @questions.each do |question| %>
 <!--検索窓のフォームでID渡せなかったので、ここで無理やり分岐。-->
@@ -15,7 +19,6 @@
   <table class="question">
     <tr><th>問:<%= question.quiz %></th></tr>
     <tr><th class="border_dotted look">答:<span class="hide"><%= question.answer %><span></th></tr>
-    <tr><th><%= question.user.nickname.present? ? "作成者：#{question.user.nickname}" : "会員No.#{question.user.id}" %><span></th></tr>
   </table>
 <% else %>
 <% end %>

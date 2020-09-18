@@ -32,13 +32,13 @@ class QuestionsController < ApplicationController
   def create
     Question.create(quiz: question_params[:quiz], answer: question_params[:answer], user_id: current_user.id)
     #なななんと、フォーム側でuser_id指定しなくてもいい
-    redirect_to root_path, notice:"保存が完了しました！"
+    redirect_to root_path, notice:"投稿が完了しました！"
   end
   
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    redirect_to root_path, notice:"削除しました。"
+    redirect_to user_path(current_user.id), notice:"削除しました。"
   end
   
   private
