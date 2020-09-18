@@ -1,5 +1,18 @@
-<h1>これはマイページです</h1>
+<%= stylesheet_link_tag 'test' %>
+
+<div id="container">
+<h1 class="main_title">これはマイページです</h1>
+    
 <% @user.questions.each do |question| %>
 <!--アソシエーション設定してるから、question使える。-->
-  <p><%= question.quiz %>：<%= question.answer %></p>
-<% end %>
+  <div class="button">
+    <%= link_to "編集",  edit_question_path(question) %>
+    <%= link_to "削除",  question_path(question), method: :delete, data:{confirm:"本当に削除しますか？"} %>
+  </div>
+  <table class="question">
+    <tr><th>問:<%= question.quiz %></th></tr>
+    <tr><th class="border_dotted look">答:<span class="hide"><%= question.answer %><span></th></tr>
+    <tr><th>答:<span class="hide"><%= question.user.nickname.present? ? "購入者　#{question.user.nickname}" : "会員No.#{question.user.id}" %><span></th></tr>
+  </table>
+  <% end %>
+</div>

@@ -10,16 +10,45 @@
   </head>
 
   <body>
+      <% path = request.fullpath %>
+      <header>
+        
       <% if user_signed_in? %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "トップ", questions_path %>
-      <%= link_to '投稿画面へ', new_question_path %>
-      <!-- 以下の記述を追記 -->
-      <%= link_to 'マイページへ', user_path(current_user.id) %>
+        <div class="button_box_right">
+        <%= link_to '赤シートにさようなら', root_path %>
+        </div>
+      
+        <% if path.include?('edit') || path.include?('new') %>
+        <% else %>
+          <div class="button_container_right sp_none">
+            <div class="button_box_left search_box">
+              <%= form_tag('/questions', method: :get) do %>
+              <%= label_tag :問題文： %>
+              <%= text_field_tag :search_quiz %>
+              <%= label_tag :回答： %>
+              <%= text_field_tag :search_answer %>
+              <%= submit_tag '検索' %>
+          <% end %>
+            </div>
+      <div class="button_box_left">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
+      <div class="button_box_left">
+        <%= link_to '新規投稿', new_question_path %>
+      </div>
+      <div class="button_box_left">
+        <%= link_to 'マイページへ', user_path(current_user.id) %>
+      </div>
+    <% end %>
+  
+  
+  
     <% else %>
       <%= link_to "ログイン", new_user_session_path %>
       <%= link_to "新規登録", new_user_registration_path %>
     <% end %>
+          </div>
+      </header>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,107 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+}
+header {
+  background-color:gray;
+  height:50px;
+  display:flex;
+  justify-content:space-between;
+  opacity:0.6;
+}
+header a{
+  text-decoration:none;
+  color:white;
+  display:block;
+  padding:20px 10px;
+  line-height:10px;
+  font-weight:bold;
+  letter-spacing:2px;
+  font-size:13px;
+}
+.search_box label{
+  text-decoration: none;
+  color: white;
+  line-height: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.search_box input[type="submit"] {
+  padding: 1px 7px;
+  border: 1px solid;
+  cursor:pointer;
+  
+}
+header a:hover{
+  background-color:#555;
+}
+
+#container{
+  width:90%;
+  padding:50px 0;
+  margin:0 auto;
+  text-align:left;
+  max-width:800px;
+}
+.main_title {
+  text-align: left;
+  border-bottom: 1px solid skyblue;
+  margin-bottom:50px
+}
+.question{
+  background-color:#eee;
+  width:100%;
+  border:1px solid gray;
+  margin-bottom: 25px;
+  border-radius: 6px;
+}
+.question th{
+  width:50%;
+  padding: 2px 7px;
+  
+}
+
+.border_dotted{
+  border-top: 1px dotted black;
+}
+.question{
+  margin-bottom:25px;
+}
+.hide{
+  color:#eee;
+  width: 90%;
+  display: inline-block;}
+
+.look span:hover{
+  color:black;
+}
+.button a{
+  text-decoration:none;
+  color:blue;
+}
+.notice{
+  text-align:center;
+}
+.button_box_right{
+  border-right: 1px solid #555;
+}
+.button_box_left{
+  border-left: 1px solid #555;
+}
+.search_box{
+  padding: 12px 12px 0 12px;
+}
+.button_container_right{
+  display:flex;
+}
+@media(max-width:751px){
+  .look span:click{
+  color:black;
+}
+.sp_none{
+  display:none;
+}
+}

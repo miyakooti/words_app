@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'test' %>
+<div id="container">
+<%= form_with model:@question, local: true do |form| %>
+<!--local: trueとは、htmlによる送信-->
+  <h1 class="main_title">編集</h1>
+  
+<div class="question">
+    <div class="quiz">
+      <p><%= form.label :quiz, "問題文" %></p>
+      <p><%= form.text_area :quiz %></p>
+    </div>
+    <div class="answer">
+      <p><%= form.label :answer, "回答" %></p>
+      <p><%= form.text_area :answer %></p>
+    </div> 
+    <div class="submit">
+    <%= form.submit @button_value %>
+    </div>
+</div>
+<% end %>
+</div>

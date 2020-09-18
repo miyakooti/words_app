@@ -1,11 +1,29 @@
-<h1>一問一答一覧</h1>
+<%= stylesheet_link_tag 'test' %>
+
+
+
+  <div id="container">
 <% if user_signed_in? %>
+  
+  <%if flash[:notice]  %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+<h1 class="main_title">一覧</h1>
   <% @questions.each do |question| %>
-    <p><%= question.quiz %>：<%= question.answer %>：<%= question.user.nickname.present? ? "購入者　#{question.user.nickname}" : "会員No.#{question.user.id}" %></p>
+  <div class="button">
+    <%= link_to "編集",  edit_question_path(question) %>
+    <%= link_to "削除",  question_path(question), method: :delete, data:{confirm:"本当に削除しますか？"} %>
+  </div>
+  <table class="question">
+    <tr><th>問:<%= question.quiz %></th></tr>
+    <tr><th class="border_dotted look">答:<span class="hide"><%= question.answer %><span></th></tr>
+    <tr><th>答:<span class="hide"><%= question.user.nickname.present? ? "購入者　#{question.user.nickname}" : "会員No.#{question.user.id}" %><span></th></tr>
+  </table>
     <!--userはもともと呼び出せないため、
     アソシエーションというものを設定する必要がある。
     モデル同士の相互関係のようなもの。-->
   <% end %>
 <% else %>
-  <p>ログインしてください</p>
+<h1 class="main_title">ログインしてください</h1>
 <% end %>
+</div>
