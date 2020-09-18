@@ -1,0 +1,42 @@
+p, h1{
+    letter-spacing:2px;
+}
+#container{
+    max-width:900px;
+}
+.box_left{
+    width:50%;
+    padding-top: 125px;
+}
+.box_right{
+    width:50%;
+}
+.buttons a{
+    display: inline-block;
+    border: 1px solid skyblue;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 13px 45px;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-color: #f1fbff;
+}
+.buttons a:hover{
+    background-color: #def4fc;
+}
+.flex_box{
+    margin-top:55px;
+    display:flex;
+
+}
+.main_title{
+    font-weight: normal;
+    font-size: 22px;
+}
+.main_title span{
+    color: #7070ff;
+}
+.box_right p img{
+    width: 100%;
+}

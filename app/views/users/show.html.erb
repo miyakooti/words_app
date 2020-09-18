@@ -3,7 +3,10 @@
 <div id="container">
 <h1 class="main_title">これはマイページです</h1>
     
-<% @user.questions.each do |question| %>
+<% @questions.each do |question| %>
+<!--検索窓のフォームでID渡せなかったので、ここで無理やり分岐。-->
+<!--隠れフォームで実装できれば、この記述は必要ない。-->
+<% if question.user_id == current_user.id %>
 <!--アソシエーション設定してるから、question使える。-->
   <div class="button">
     <%= link_to "編集",  edit_question_path(question) %>
@@ -12,7 +15,9 @@
   <table class="question">
     <tr><th>問:<%= question.quiz %></th></tr>
     <tr><th class="border_dotted look">答:<span class="hide"><%= question.answer %><span></th></tr>
-    <tr><th>答:<span class="hide"><%= question.user.nickname.present? ? "購入者　#{question.user.nickname}" : "会員No.#{question.user.id}" %><span></th></tr>
+    <tr><th><%= question.user.nickname.present? ? "作成者：#{question.user.nickname}" : "会員No.#{question.user.id}" %><span></th></tr>
   </table>
+<% else %>
+<% end %>
   <% end %>
 </div>

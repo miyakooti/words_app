@@ -17,13 +17,29 @@
   <table class="question">
     <tr><th>問:<%= question.quiz %></th></tr>
     <tr><th class="border_dotted look">答:<span class="hide"><%= question.answer %><span></th></tr>
-    <tr><th>答:<span class="hide"><%= question.user.nickname.present? ? "購入者　#{question.user.nickname}" : "会員No.#{question.user.id}" %><span></th></tr>
+    <tr><th class="border_dotted"><%= question.user.nickname.present? ? "作成者：#{question.user.nickname}" : "作成者NO.#{question.user.id}" %><span></th></tr>
   </table>
     <!--userはもともと呼び出せないため、
     アソシエーションというものを設定する必要がある。
     モデル同士の相互関係のようなもの。-->
   <% end %>
 <% else %>
-<h1 class="main_title">ログインしてください</h1>
+<!--ログインまたは新規登録への誘導画面-->
+<%= stylesheet_link_tag 'admin' %>
+<div class="flex_box">
+  
+<div class="box_left">
+    <h1 class="main_title"><span>ログイン</span>または<span>新規登録</span>してください</h1>
+  <div class="buttons">
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+  </div>
+</div>
+<div class="box_right">
+  <p>
+    <img src= <%= image_path("Launching-amico.png")%> ></img>
+  </p>
+</div>
+</div>
 <% end %>
 </div>

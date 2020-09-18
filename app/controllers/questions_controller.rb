@@ -6,7 +6,11 @@ class QuestionsController < ApplicationController
   end
   
   def index
-    @questions = Question.all
+    # @questions = Question.allこれじゃなくて、、
+    #新しいインスタンす創って、、
+    question = Question.new(params_question_search)#送信されてきた値を引数
+    #引数使って(?)検索かける。この関数はモデルで定義。
+    @questions = question.search
   end
   
   def new
@@ -40,5 +44,8 @@ class QuestionsController < ApplicationController
   private
   def question_params
     params.require(:question).permit(:quiz, :answer)
+  end
+  def params_question_search
+    params.permit(:search_quiz, :search_answer)
   end
 end

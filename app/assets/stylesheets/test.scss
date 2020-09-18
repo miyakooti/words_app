@@ -11,6 +11,8 @@ header {
   display:flex;
   justify-content:space-between;
   opacity:0.6;
+  position:fixed;
+  width:100%;
 }
 header a{
   text-decoration:none;

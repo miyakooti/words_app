@@ -1,0 +1,44 @@
+ <header>
+    <!--URL取得-->
+      <% path = request.fullpath %>
+    
+    <!--検索窓を押した後のリダイレクト先の分岐。トップの時にはトップ、マイページの時にはマイページ。-->
+      <% if path.include?('user') && !path.include?('sign_up') && !path.include?('sign_in') %>
+        <% after_search_redirect = user_path(current_user.id) %>
+      <% else %>
+        <% after_search_redirect = root_path %>
+      <% end %>
+        <div class="button_box_right">
+        <%= link_to '赤シートにさようなら TOP', root_path %>
+        <!--画質が荒く、泣く泣くお蔵入り、、<a href=root_path><img src=<%= image_path("logo.png") %>></img></a>-->
+        </div>
+      <% if user_signed_in? %>
+        <% if path.include?('edit') || path.include?('new') %>
+        <% else %>
+          <div class="button_container_right sp_none">
+            <div class="button_box_left search_box">
+              <%= form_tag(after_search_redirect, method: :get) do %>
+              <%= label_tag :問題文： %>
+              <%= text_field_tag :search_quiz %>
+              <%= label_tag :回答： %>
+              <%= text_field_tag :search_answer %>
+              <%= submit_tag '検索' %>
+          <% end %>
+            </div>
+      <div class="button_box_left">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
+      <div class="button_box_left">
+        <%= link_to '新規投稿', new_question_path %>
+      </div>
+      <div class="button_box_left">
+        <%= link_to 'マイページへ', user_path(current_user.id) %>
+      </div>
+    <% end %>
+    <% else %>
+    <!--indexに移動 -->
+      <!--<%= link_to "ログイン", new_user_session_path %>-->
+      <!--<%= link_to "新規登録", new_user_registration_path %>-->
+    <% end %>
+          </div>
+      </header>
