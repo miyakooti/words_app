@@ -59,9 +59,9 @@ header a:hover{
   margin-bottom:50px
 }
 .question{
-  background-color:#eee;
+  background-color:white;
   width:100%;
-  border:1px solid gray;
+  border: 3px solid #1c92d2;
   margin-bottom: 25px;
   border-radius: 6px;
 }
@@ -78,9 +78,10 @@ header a:hover{
   margin-bottom:25px;
 }
 .hide{
-  color:#eee;
+  color:white;
   width: 90%;
-  display: inline-block;}
+  display: inline-block;
+}
 
 .look span:hover{
   color:black;

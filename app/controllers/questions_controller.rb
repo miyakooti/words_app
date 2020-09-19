@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
     @main_title = "新規作成"
     @button_value = "投稿する"
     # @main_img_path = image_path("thought-amico.png") image_pathはview側でしか使えないらしい、、残念
+    @pushed_path_new = params[:pushed_path_index]#新規作成おした時点のリンク
   end
   
   def edit
@@ -37,7 +38,13 @@ class QuestionsController < ApplicationController
   def create
     Question.create(quiz: question_params[:quiz], answer: question_params[:answer], user_id: current_user.id)
     #なななんと、フォーム側でuser_id指定しなくてもいい
-    redirect_to root_path, notice:"投稿が完了しました！"
+    
+    #一覧にいたときは一覧に、マイページにいたときはマイページに遷移するロジック
+    if params[:pushed_path_new].include?('user')#新規作成おした時点のリンクにuserがあるとき
+      redirect_to user_path(current_user.id), notice:"投稿が完了しました！"
+    else
+      redirect_to root_path, notice:"投稿が完了しました！"
+    end
   end
   
   def destroy

@@ -10,6 +10,7 @@
     <p class="quiz"><%= f.text_area :quiz %></p>
     <p class="answer"><%= f.label "回答" %></p>
     <p class="answer"><%= f.text_area :answer %></p>
+    <%= hidden_field_tag :pushed_path_new, @pushed_path_new %><!--隠しinputで、新規作成推した時点でのリンクを渡す。-->
     <input type="submit" value=<%= @button_value %>>
   </div>
     <div class="box_right">
