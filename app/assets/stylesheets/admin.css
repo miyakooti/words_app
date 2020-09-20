@@ -1,0 +1,85 @@
+p, h1 {
+  letter-spacing: 2px; }
+
+#container {
+  max-width: 900px; }
+
+.box_left {
+  width: 50%;
+  padding-top: 25px; }
+
+.box_right {
+  width: 50%; }
+
+.buttons a {
+  display: inline-block;
+  border: 1px solid skyblue;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  padding: 13px 45px;
+  border-radius: 5px;
+  margin-right: 20px;
+  background-color: #f1fbff; }
+
+.buttons input {
+  display: inline-block;
+  border: 1px solid skyblue;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  padding: 13px 45px;
+  border-radius: 5px;
+  margin-right: 20px;
+  background-color: #abe7ff;
+  margin-top: 30px; }
+
+.buttons a:hover {
+  background-color: #def4fc; }
+
+.buttons input:hover {
+  cursor: pointer; }
+
+.flex_box {
+  margin-top: 55px;
+  display: flex; }
+
+.main_title {
+  font-weight: normal;
+  font-size: 22px; }
+
+.main_title span {
+  color: #7070ff; }
+
+.box_right p img {
+  width: 100%; }
+
+.new_user {
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
+  padding: 20px 40px;
+  border-radius: 20px;
+  background-color: #f5fbfe; }
+
+.new_user a[href="/users/password/new"] {
+  text-decoration: none;
+  color: black; }
+
+.new_user a[href="/users/password/new"]:hover {
+  text-decoration: revert; }
+
+.input {
+  margin-bottom: 30px; }
+
+@media (max-width: 751px) {
+  .box_left {
+    width: 100%; }
+
+  .box_right {
+    width: 100%; }
+
+  .flex_box {
+    flex-direction: column; } }
+
+/*# sourceMappingURL=admin.css.map */

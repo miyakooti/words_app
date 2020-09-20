@@ -1,0 +1,24 @@
+ <header class="pc_none header02">
+    <!--URL取得-->
+      <% path = request.fullpath %>
+    
+        
+      <% if user_signed_in? %>
+        <div class="button_container_right">
+
+      <div class="button_box_right">
+        <!--link_toならアラート表示できる。-->
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data:{confirm:"本当にログアウトするんですか？"}%>
+      </div>
+      <div class="button_box_right">
+        <!--link_toで値を受け渡す方法！新規投稿後のリダイレクトの時に使う値。向こうまでもっていく。-->
+        <%= link_to '新規投稿', new_question_path(pushed_path_index: path) %>
+      </div>
+      <div class="button_box_right">
+        <%= link_to 'マイページへ', user_path(current_user.id) %>
+      </div>
+    <% else %>
+    <% end %>
+          </div>
+      
+      </header>

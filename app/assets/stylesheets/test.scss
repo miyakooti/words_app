@@ -2,7 +2,9 @@
   margin:0;
   padding:0;
 }
-
+.pc_none{
+  display:none;
+}
 body {
   background: #1c92d2;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffffff, #93d5f9);  /* Chrome 10-25, Safari 5.1-6 */
@@ -111,5 +113,21 @@ header a:hover{
 }
 .sp_none{
   display:none;
+}
+.pc_none{
+  display:block;
+}
+header{
+  height: 70px;
+}
+header a{
+  padding-top:30px;
+}
+
+.header02{
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  height: 61px;
 }
 }

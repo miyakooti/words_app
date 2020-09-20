@@ -3,7 +3,7 @@
 
 <div id="container">
   <%= render 'templates/notice'%>
-<h1 class="main_title"><span><%= @user.nickname.present? ? @user.nickname : "ゲスト#{@user.id}" %></span>さんのマイページです</h1>
+<h1 class="main_title"><span><%= @user.nickname.present? ? @user.nickname : "ゲスト#{@user.id}" %></span>さんの<br class="pc_none">マイページです</h1>
     
 <% @questions.each do |question| %>
 <!--検索窓のフォームでID渡せなかったので、ここで無理やり分岐。-->

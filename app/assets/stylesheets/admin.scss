@@ -77,3 +77,16 @@ p, h1{
 .input{
     margin-bottom:30px;
 }
+@media(max-width:751px){
+    .box_left{
+        width:100%;
+    }
+    .box_right{
+        width:100%;
+    }
+    .flex_box{
+        flex-direction:column;
+        margin: 0;
+    }
+
+}

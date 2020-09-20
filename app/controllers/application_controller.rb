@@ -7,4 +7,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
   # ここまで追記
+  
+  protect_from_forgery with: :null_session
 end
