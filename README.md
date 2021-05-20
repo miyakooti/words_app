@@ -1,24 +1,7 @@
-# README
+# 赤シートにさようなら
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[リンク](https://words-app-1024.herokuapp.com/)
 
-Things you may want to cover:
+単語帳などについている赤シートでいちいち隠すのがめんどくさいと思っていたときに思いついたアプリです。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ログイン、検索機能などが実装されています。
